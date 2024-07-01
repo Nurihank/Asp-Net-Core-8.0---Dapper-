@@ -1,0 +1,15 @@
+﻿using WebApi.Dtos.urun;
+using WebApi.Dtos.urunDtos;
+
+namespace WebApi.Repositories.UrunRepositories
+{
+    public interface IUrunRepo
+    {
+        Task<List<ResultUrunlerDto>> GetResultUrunlersAsync();
+        void CreateUrun(CreateUrunlerDto createUrunlerDto);
+        Task<bool> DeleteUrunler(DeleteUrunDto deleteUrunDto);
+        // Metodu async hale getirdik ve Task<bool> dönecek şekilde güncelledik
+        Task<bool> UpdateUrunler(UpdateUrunlerDto updateUrunlerDto);
+        Task<ResultUrunlerDto> GetUrunByIdAsync(int id);
+    }
+}
