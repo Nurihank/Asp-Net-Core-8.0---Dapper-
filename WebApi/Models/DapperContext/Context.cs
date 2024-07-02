@@ -15,8 +15,6 @@ namespace WebApi.Models.DapperContext
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("connection");
         }
-
-
         //bağlantıyı oluşturduk
         public IDbConnection CreateConnection () => new SqlConnection(_connectionString);
 

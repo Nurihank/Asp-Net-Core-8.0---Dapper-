@@ -34,8 +34,8 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<List<ResultUrunlerDto>> GetResultUrunlersAsync()
         {
-            string query = "SELECT UrunAdi , UrunAciklamasi, KategoriAdi FROM Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID";
-
+            string query = "SELECT UrunAdi , UrunAciklamasi, KategoriAdi FROM " +
+                "Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID";
             using (var connection = _context.CreateConnection()) 
             {
                 var values = await connection.QueryAsync<ResultUrunlerDto>(query);
