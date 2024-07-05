@@ -69,7 +69,7 @@ namespace WebApi.Repositories.KategoriRepositories
         public async Task<bool> UpdateKategori(UpdateKategoriDto updateKategoriDto)
         {
             var selectQuery = "SELECT COUNT(1) FROM Kategori WHERE KategoriID = @id";
-            var DeleteQuery = "UPDATE FROM Kategori SET KategoriAdi = @adi WHERE KategoriID = @id";
+            var DeleteQuery = "UPDATE Kategori SET KategoriAdi = @adi WHERE KategoriID = @id";
             var parameters = new DynamicParameters();
             parameters.Add("adi", updateKategoriDto.KategoriAdi);
             parameters.Add("id", updateKategoriDto.KategoriID);

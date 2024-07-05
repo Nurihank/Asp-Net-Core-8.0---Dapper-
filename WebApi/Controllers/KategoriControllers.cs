@@ -30,11 +30,11 @@ namespace WebApi.Controllers
             var values =  await _kategoriRepo.CreateKategori(createKategoriDto);
             if(values)
             {
-                return Ok("Ürün Başarıyla Eklendi");
+                return Ok("Kategori Başarıyla Eklendi");
             }
             else
             {
-                return Ok("Böyle bir ürün vardır");
+                return Ok("Böyle bir Kategori vardır");
             }
 
         }
@@ -49,7 +49,7 @@ namespace WebApi.Controllers
             }
             else
             {
-                return Ok("Böyle bir ürün bulunamadı");
+                return Ok("Böyle bir Kategori bulunamadı");
             }
         }
 
@@ -59,11 +59,11 @@ namespace WebApi.Controllers
             var values = await _kategoriRepo.UpdateKategori(updateKategoriDto);
             if (values)
             {
-                return Ok("Başarıyla Silindi");
+                return Ok("Başarıyla Güncellendi");
             }
             else
             {
-                return Ok("Böyle bir ürün bulunamadı");
+                return Ok("Böyle bir Kategori bulunamadı");
             }
         }
     }

@@ -34,7 +34,7 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<List<ResultUrunlerDto>> GetResultUrunlersAsync()
         {
-            string query = "SELECT UrunAdi , UrunAciklamasi, KategoriAdi FROM " +
+            string query = "SELECT UrunID, UrunAdi , UrunAciklamasi, KategoriAdi FROM " +
                 "Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID";
             using (var connection = _context.CreateConnection()) 
             {
@@ -47,11 +47,12 @@ namespace WebApi.Repositories.UrunRepositories
         }
         public async Task<bool> DeleteUrunler(DeleteUrunDto deleteUrunDto)
         {
+            Console.WriteLine("silme");
             string selectQuery = "SELECT COUNT(1) FROM Urun WHERE UrunID = @id";
             string deleteQuery = "DELETE FROM Urun WHERE UrunID = @id";
             var parameters = new DynamicParameters();
             parameters.Add("@id", deleteUrunDto.Id);
-            Console.WriteLine("+" + parameters.ToString());
+            Console.WriteLine("+" + deleteUrunDto.Id);
             using (var connection = _context.CreateConnection())
             {
                 var exists = await connection.ExecuteScalarAsync<int>(selectQuery, parameters);
@@ -64,6 +65,7 @@ namespace WebApi.Repositories.UrunRepositories
                 return true; // Ürün başarıyla silindi
             }
         }
+
         public async Task<bool> UpdateUrunler(UpdateUrunlerDto updateUrunlerDto)
         {
             string selectedQuery = "SELECT COUNT(1) FROM Urun WHERE UrunID = @UrunID";
