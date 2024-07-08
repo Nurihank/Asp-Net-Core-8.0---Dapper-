@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\kategoricontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\kategoricontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\kategorirepositories\\kategorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\kategorirepositories\\kategorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,35 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KategoriControllers.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KategoriControllers.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\KategoriControllers.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KategoriControllers.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\KategoriControllers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T12:53:27.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "KategoriRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KategoriRepositories\\KategoriRepo.cs",
-              "RelativeDocumentMoniker": "WebApi\\Repositories\\KategoriRepositories\\KategoriRepo.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KategoriRepositories\\KategoriRepo.cs",
-              "RelativeToolTip": "WebApi\\Repositories\\KategoriRepositories\\KategoriRepo.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBEAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T12:07:00.398Z",
-              "EditorCaption": ""
-            }
-          ]
+          "SelectedChildIndex": -1,
+          "Children": []
         }
       ]
     }

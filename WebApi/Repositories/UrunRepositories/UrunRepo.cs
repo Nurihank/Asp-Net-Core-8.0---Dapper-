@@ -3,6 +3,7 @@ using System.Reflection.Metadata;
 using WebApi.Dtos.urun;
 using WebApi.Dtos.urunDtos;
 using WebApi.Models.DapperContext;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WebApi.Repositories.UrunRepositories
 {
@@ -17,11 +18,12 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async void CreateUrun(CreateUrunlerDto createUrunlerDto)
         {
-            string query = "INSERT INTO Urun (UrunAdi,UrunAciklamasi,KategoriID) values(@adi,@aciklama,@kategoriID)";
+            string query = "INSERT INTO Urun (UrunAdi,UrunAciklamasi,KategoriID,UrunFiyati) values(@adi,@aciklama,@kategoriID,@UrunFiyati)";
             var parameters = new DynamicParameters();
             parameters.Add("@adi",createUrunlerDto.UrunAdi);
             parameters.Add("@aciklama", createUrunlerDto.UrunAciklamasi);
             parameters.Add("@kategoriID", createUrunlerDto.KategoriID);
+            parameters.Add("@UrunFiyati",createUrunlerDto.UrunFiyati);
             
 
             using (var connection = _context.CreateConnection())
@@ -34,7 +36,7 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<List<ResultUrunlerDto>> GetResultUrunlersAsync()
         {
-            string query = "SELECT UrunID, UrunAdi , UrunAciklamasi, KategoriAdi FROM " +
+            string query = "SELECT UrunID, UrunAdi , UrunFiyati,UrunAciklamasi, KategoriAdi FROM " +
                 "Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID";
             using (var connection = _context.CreateConnection()) 
             {
@@ -69,13 +71,14 @@ namespace WebApi.Repositories.UrunRepositories
         public async Task<bool> UpdateUrunler(UpdateUrunlerDto updateUrunlerDto)
         {
             string selectedQuery = "SELECT COUNT(1) FROM Urun WHERE UrunID = @UrunID";
-            string updateQuery = "UPDATE Urun Set UrunAdi = @UrunAdi , UrunAciklamasi=@UrunAciklamasi , KategoriID=@KategoriID WHERE UrunID = @UrunID";
+            string updateQuery = "UPDATE Urun Set UrunAdi = @UrunAdi , UrunAciklamasi=@UrunAciklamasi UrunFiyati = @UrunFiyati, KategoriID=@KategoriID WHERE UrunID = @UrunID";
             
             var Sparameters = new DynamicParameters();
             Sparameters.Add("@UrunID", updateUrunlerDto.UrunID);
 
             var Uparameters = new DynamicParameters();
             Uparameters.Add("@UrunID", updateUrunlerDto.UrunID);
+            Uparameters.Add("@UrunFiyati", updateUrunlerDto.UrunFiyati);
             Uparameters.Add("@UrunAdi", updateUrunlerDto.UrunAdi);
             Uparameters.Add("@UrunAciklamasi", updateUrunlerDto.UrunAciklamasi);
             Uparameters.Add("@KategoriID", updateUrunlerDto.KategoriID);
@@ -96,12 +99,12 @@ namespace WebApi.Repositories.UrunRepositories
 
         }
 
-        public async Task<ResultUrunlerDto> GetUrunByIdAsync(int id)
+        public async Task<ResultUrunlerDto> GetUrunByNameAsync(string UrunAdi)
         {
-            string query = "SELECT UrunAdi , UrunAciklamasi , KategoriAdi FROM Urun INNER JOIN Kategori " +
-                "ON Urun.KategoriID = Kategori.KategoriID WHERE UrunID = @id";
+            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati, KategoriAdi FROM Urun INNER JOIN Kategori " +
+                "ON Urun.KategoriID = Kategori.KategoriID WHERE UrunAdi = @UrunAdi";
             var parameters = new DynamicParameters();
-            parameters.Add("@id", id);
+            parameters.Add("@UrunAdi", UrunAdi);
 
             using (var connection = _context.CreateConnection())
             {

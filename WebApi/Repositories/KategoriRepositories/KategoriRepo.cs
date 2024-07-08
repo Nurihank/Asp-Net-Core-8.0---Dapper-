@@ -66,6 +66,19 @@ namespace WebApi.Repositories.KategoriRepositories
             }
         }
 
+        public async Task<List<ProductByCategoryIDDto>> GetAllProductByCategoryIDAsync(int KategoriID)
+        {
+            string query = "SELECT UrunAdi,UrunID , UrunAciklamasi FROM Urun WHERE KategoriID = @KategoriID";
+            var parameters = new DynamicParameters();
+            parameters.Add("@KategoriID", KategoriID);
+
+            using( var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ProductByCategoryIDDto>(query, parameters);
+                return values.ToList();
+            }
+        }
+
         public async Task<bool> UpdateKategori(UpdateKategoriDto updateKategoriDto)
         {
             var selectQuery = "SELECT COUNT(1) FROM Kategori WHERE KategoriID = @id";

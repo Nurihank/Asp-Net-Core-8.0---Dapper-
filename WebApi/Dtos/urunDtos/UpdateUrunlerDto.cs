@@ -6,5 +6,6 @@
         public string UrunAdi { get; set; }
         public string UrunAciklamasi { get; set; }
         public int KategoriID { get; set; }
+        public double UrunFiyati { get; set; }
     }
 }

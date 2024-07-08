@@ -72,10 +72,10 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUrunById(int id)
+        [HttpGet("{UrunAdi}")]
+        public async Task<IActionResult> GetUrunByNameAsync(string UrunAdi)
         {
-            var urun = await _urunRepo.GetUrunByIdAsync(id);
+            var urun = await _urunRepo.GetUrunByNameAsync(UrunAdi);
 
             if (urun == null)
             {

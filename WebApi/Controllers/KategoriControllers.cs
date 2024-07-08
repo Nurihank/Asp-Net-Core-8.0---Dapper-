@@ -66,5 +66,23 @@ namespace WebApi.Controllers
                 return Ok("Böyle bir Kategori bulunamadı");
             }
         }
+
+        [HttpGet("{KategoriID}")]
+        public async Task<IActionResult> ProductByIdCategory(int KategoriID)
+        {
+            var productByCategoryIDDto = new ProductByCategoryIDDto
+            {
+                KategoriID = KategoriID
+            };
+
+            var values = await _kategoriRepo.GetAllProductByCategoryIDAsync(productByCategoryIDDto.KategoriID);
+
+            if (values == null || !values.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(values);
+        }
     }
 }

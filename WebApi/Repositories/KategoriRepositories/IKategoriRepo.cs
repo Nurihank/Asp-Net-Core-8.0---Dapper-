@@ -8,5 +8,6 @@ namespace WebApi.Repositories.KategoriRepositories
         Task<bool> CreateKategori(CreateKategoriDto createKategoriDto);
         Task<bool> DeleteKategori(DeleteKategoriDto deleteKategoriDto);
         Task<bool> UpdateKategori(UpdateKategoriDto updateKategoriDto);
+        Task<List<ProductByCategoryIDDto>> GetAllProductByCategoryIDAsync(int KategoriID);
     }
 }
