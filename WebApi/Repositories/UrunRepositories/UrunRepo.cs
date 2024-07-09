@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata;
 using WebApi.Dtos.urun;
 using WebApi.Dtos.urunDtos;
@@ -18,13 +20,13 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async void CreateUrun(CreateUrunlerDto createUrunlerDto)
         {
-            string query = "INSERT INTO Urun (UrunAdi,UrunAciklamasi,KategoriID,UrunFiyati) values(@adi,@aciklama,@kategoriID,@UrunFiyati)";
+            string query = "INSERT INTO Urun (UrunAdi,UrunAciklamasi,KategoriID,UrunFiyati,UrunBarcode) values(@adi,@aciklama,@kategoriID,@UrunFiyati,@UrunBarcode)";
             var parameters = new DynamicParameters();
             parameters.Add("@adi",createUrunlerDto.UrunAdi);
             parameters.Add("@aciklama", createUrunlerDto.UrunAciklamasi);
             parameters.Add("@kategoriID", createUrunlerDto.KategoriID);
             parameters.Add("@UrunFiyati",createUrunlerDto.UrunFiyati);
-            
+            parameters.Add("@UrunBarcode", createUrunlerDto.UrunBarcode);
 
             using (var connection = _context.CreateConnection())
             {
@@ -36,7 +38,7 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<List<ResultUrunlerDto>> GetResultUrunlersAsync()
         {
-            string query = "SELECT UrunID, UrunAdi , UrunFiyati,UrunAciklamasi, KategoriAdi FROM " +
+            string query = "SELECT UrunID, UrunAdi , UrunFiyati,UrunAciklamasi, KategoriAdi ,UrunBarcode FROM " +
                 "Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID";
             using (var connection = _context.CreateConnection()) 
             {
@@ -49,12 +51,12 @@ namespace WebApi.Repositories.UrunRepositories
         }
         public async Task<bool> DeleteUrunler(DeleteUrunDto deleteUrunDto)
         {
-            Console.WriteLine("silme");
+          
             string selectQuery = "SELECT COUNT(1) FROM Urun WHERE UrunID = @id";
             string deleteQuery = "DELETE FROM Urun WHERE UrunID = @id";
             var parameters = new DynamicParameters();
             parameters.Add("@id", deleteUrunDto.Id);
-            Console.WriteLine("+" + deleteUrunDto.Id);
+   
             using (var connection = _context.CreateConnection())
             {
                 var exists = await connection.ExecuteScalarAsync<int>(selectQuery, parameters);
@@ -99,17 +101,31 @@ namespace WebApi.Repositories.UrunRepositories
 
         }
 
-        public async Task<ResultUrunlerDto> GetUrunByNameAsync(string UrunAdi)
+        public async Task<ResultUrunlerDto> GetUrunByBarCodeAsync(string UrunBarcode)
         {
-            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati, KategoriAdi FROM Urun INNER JOIN Kategori " +
-                "ON Urun.KategoriID = Kategori.KategoriID WHERE UrunAdi = @UrunAdi";
+            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati, KategoriAdi,UrunBarcode FROM Urun INNER JOIN Kategori " +
+                "ON Urun.KategoriID = Kategori.KategoriID WHERE UrunBarcode = @UrunBarcode";
             var parameters = new DynamicParameters();
-            parameters.Add("@UrunAdi", UrunAdi);
+            parameters.Add("@UrunBarcode", UrunBarcode);
 
             using (var connection = _context.CreateConnection())
             {
                 var urun = await connection.QueryFirstOrDefaultAsync<ResultUrunlerDto>(query, parameters);
                 return urun;
+            }
+        }
+
+        public async Task<List<ResultUrunlerDto>> GetUrunByNameAsync(string UrunAdi)
+        {
+            string query = "SELECT * FROM Urun WHERE UrunAdi LIKE @UrunAdi";
+            var parameters = new DynamicParameters();
+            parameters.Add("@UrunAdi", "%" + UrunAdi + "%");
+
+
+            using (var connection = _context.CreateConnection())
+            {
+                var urun = await connection.QueryAsync<ResultUrunlerDto>(query, parameters);
+                return urun.ToList();
             }
         }
     }

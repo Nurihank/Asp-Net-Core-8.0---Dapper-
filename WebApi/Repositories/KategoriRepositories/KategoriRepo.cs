@@ -68,7 +68,7 @@ namespace WebApi.Repositories.KategoriRepositories
 
         public async Task<List<ProductByCategoryIDDto>> GetAllProductByCategoryIDAsync(int KategoriID)
         {
-            string query = "SELECT UrunAdi,UrunID , UrunAciklamasi FROM Urun WHERE KategoriID = @KategoriID";
+            string query = "SELECT UrunAdi,UrunID , UrunAciklamasi,UrunBarcode FROM Urun WHERE KategoriID = @KategoriID";
             var parameters = new DynamicParameters();
             parameters.Add("@KategoriID", KategoriID);
 

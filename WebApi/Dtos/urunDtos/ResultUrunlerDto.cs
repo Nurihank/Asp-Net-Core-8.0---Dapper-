@@ -7,5 +7,6 @@
         public string UrunAciklamasi { get; set; }
         public string KategoriAdi { get; set; }
         public double UrunFiyati { get; set; }
+        public string UrunBarcode { get; set; }
     }
 }

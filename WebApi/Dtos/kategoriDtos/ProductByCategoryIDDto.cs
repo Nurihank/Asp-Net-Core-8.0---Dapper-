@@ -7,7 +7,7 @@
         public string UrunAdi { get; set; }
         public int UrunID { get; set; }
         public string UrunAciklamasi {  get; set; }
-
+        public string UrunBarcode { get; set; }
 
     }
 }

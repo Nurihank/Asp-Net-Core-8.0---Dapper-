@@ -28,7 +28,7 @@ namespace WebApi.Controllers
             catch (Exception ex)
             {
                 // Log the error (you can use any logging library, e.g., Serilog)
-                Console.WriteLine($"Error: {ex.Message}");
+               
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -72,10 +72,10 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpGet("{UrunAdi}")]
-        public async Task<IActionResult> GetUrunByNameAsync(string UrunAdi)
+        [HttpGet("/api/UrunControllers/UrunBarcode/{UrunBarcode}")]
+        public async Task<IActionResult> GetUrunByBarCodeAsync(string UrunBarcode)
         {
-            var urun = await _urunRepo.GetUrunByNameAsync(UrunAdi);
+            var urun = await _urunRepo.GetUrunByBarCodeAsync(UrunBarcode);
 
             if (urun == null)
             {
@@ -85,5 +85,17 @@ namespace WebApi.Controllers
             return Ok(urun);
         }
 
+        [HttpGet("{urunAdi}")]
+        public async Task<IActionResult> GetUrunByNameAsync(string urunAdi)
+        {
+            var urun = await _urunRepo.GetUrunByNameAsync(urunAdi);
+        
+            if (urun == null)
+            {
+                return NotFound("Ürün bulunamadı");
+            }
+
+            return Ok(urun);
+        }
     }
 }

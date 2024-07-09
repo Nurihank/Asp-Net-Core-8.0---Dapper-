@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\urunrepositories\\urunrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\urunrepositories\\urunrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\uruncontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\uruncontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\filtrecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\filtrecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\urundtos\\createurunlerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\urundtos\\createurunlerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +26,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UrunControllers.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\UrunControllers.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UrunControllers.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\UrunControllers.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UrunControllers.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAIAwwFsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T09:14:08.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FiltreControllers.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\FiltreControllers.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\FiltreControllers.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\FiltreControllers.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\FiltreControllers.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAIAwwBQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T09:13:56.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UrunRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "RelativeDocumentMoniker": "WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "RelativeToolTip": "WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAD4vzoAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:43:29.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateUrunlerDto.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\urunDtos\\CreateUrunlerDto.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\urunDtos\\CreateUrunlerDto.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\urunDtos\\CreateUrunlerDto.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\urunDtos\\CreateUrunlerDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:42:49.752Z",
+              "EditorCaption": ""
+            }
+          ]
         }
       ]
     }

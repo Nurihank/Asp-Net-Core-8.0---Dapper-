@@ -10,6 +10,7 @@ namespace WebApi.Repositories.UrunRepositories
         Task<bool> DeleteUrunler(DeleteUrunDto deleteUrunDto);
         // Metodu async hale getirdik ve Task<bool> dönecek şekilde güncelledik
         Task<bool> UpdateUrunler(UpdateUrunlerDto updateUrunlerDto);
-        Task<ResultUrunlerDto> GetUrunByNameAsync(string UrunAdi);
+        Task<ResultUrunlerDto> GetUrunByBarCodeAsync(string UrunBarcode);
+        Task<List<ResultUrunlerDto>> GetUrunByNameAsync(string UrunAdi);
     }
 }
