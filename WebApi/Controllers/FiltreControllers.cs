@@ -15,7 +15,7 @@ namespace WebApi.Controllers
             _filtreRepo = filtreRepo;
         }
 
-        [HttpGet]
+        [HttpGet("{number}")]
         public async Task<IActionResult> GetUrunList(int number)
         {
             Console.WriteLine(number);

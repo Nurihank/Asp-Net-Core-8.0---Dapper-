@@ -12,7 +12,8 @@ namespace WebApi.Repositories.FiltreRepositories
         {
             _context = context;
         }
-        public async Task<FiltreDto> GetFiltreListAsync(int number)
+
+        public async Task<List<FiltreDto>> GetFiltreListAsync(int number)
         {
             if (number == 1)
             {
@@ -20,8 +21,8 @@ namespace WebApi.Repositories.FiltreRepositories
 
                 using (var connection = _context.CreateConnection())
                 {
-                    var urun = await connection.QueryFirstOrDefaultAsync<FiltreDto>(query);
-                    return urun;
+                    var urun = await connection.QueryAsync<FiltreDto>(query);
+                    return urun.ToList();
                 }
             }
             else if (number == 2)
@@ -29,8 +30,8 @@ namespace WebApi.Repositories.FiltreRepositories
                 var query = "SELECT * FROM Urun ORDER BY UrunFiyati ASC";
                 using (var connection = _context.CreateConnection())
                 {
-                    var urun = await connection.QueryFirstOrDefaultAsync<FiltreDto>(query);
-                    return urun;
+                    var urun = await connection.QueryAsync<FiltreDto>(query);
+                        return urun.ToList();
                 }
             }
             else if (number == 3)
@@ -38,8 +39,8 @@ namespace WebApi.Repositories.FiltreRepositories
                 var query = "SELECT * FROM Urun ORDER BY UrunFiyati DESC";
                 using (var connection = _context.CreateConnection())
                 {
-                    var urun = await connection.QueryFirstOrDefaultAsync<FiltreDto>(query);
-                    return urun;
+                    var urun = await connection.QueryAsync<FiltreDto>(query);
+                    return urun.ToList();
                 }
             }
             else

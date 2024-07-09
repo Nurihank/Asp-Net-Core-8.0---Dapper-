@@ -4,6 +4,6 @@ namespace WebApi.Repositories.FiltreRepositories
 {
     public interface IFiltreRepo
     {
-        Task<FiltreDto> GetFiltreListAsync(int number);
+        Task<List<FiltreDto>> GetFiltreListAsync(int number);
     }
 }
