@@ -16,11 +16,24 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{number}")]
-        public async Task<IActionResult> GetUrunList(int number)
+        public async Task<IActionResult> GetFiltreliUrunList(int number)
         {
-            Console.WriteLine(number);
             var values = await _filtreRepo.GetFiltreListAsync(number); 
             if(values == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(values);
+            }
+        }
+
+        [HttpGet("/api/FiltreControllers/FiyatAraligi/{enDüsük}/{enYüksek}")]
+         public async Task<IActionResult> GetFiyatAraligiUrunList(int enDüsük, int enYüksek)
+        {
+            var values = await _filtreRepo.GetFiyatAraligiListAsync(enDüsük, enYüksek);
+            if (values == null)
             {
                 return NotFound();
             }

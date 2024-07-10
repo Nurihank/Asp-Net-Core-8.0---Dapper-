@@ -48,5 +48,19 @@ namespace WebApi.Repositories.FiltreRepositories
                 return null;
             }
         }
+
+        public async Task<List<FiltreDto>> GetFiyatAraligiListAsync(int enDüsük, int enYüksek)
+        {
+            var Query = "SELECT * FROM Urun WHERE UrunFiyati  BETWEEN @düsük AND @yüksek";
+            var parameters = new DynamicParameters();
+            parameters.Add("@düsük", enDüsük);
+            parameters.Add("@yüksek", enYüksek);
+
+            using (var connection = _context.CreateConnection())
+            {
+                var urun = await connection.QueryAsync<FiltreDto>(Query, parameters);
+                return urun.ToList();
+            }
+        }
     }
 }

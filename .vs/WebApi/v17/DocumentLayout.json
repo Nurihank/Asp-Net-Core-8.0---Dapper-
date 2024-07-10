@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\filtrecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\filtrecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\filtrerepositories\\filtrerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\filtrerepositories\\filtrerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\filtredto\\filtredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\filtredto\\filtredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\filtrecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\filtrecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\filtrerepositories\\ifiltrerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\filtrerepositories\\ifiltrerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\filtrerepositories\\filtrerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\filtrerepositories\\filtrerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FiltreRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
-              "RelativeDocumentMoniker": "WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
-              "RelativeToolTip": "WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAswCkAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T13:11:32.716Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -53,27 +40,40 @@
               "RelativeDocumentMoniker": "WebApi\\Repositories\\FiltreRepositories\\IFiltreRepo.cs",
               "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FiltreRepositories\\IFiltreRepo.cs",
               "RelativeToolTip": "WebApi\\Repositories\\FiltreRepositories\\IFiltreRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T13:11:15.148Z",
+              "WhenOpened": "2024-07-10T13:26:03.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "FiltreRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
+              "RelativeDocumentMoniker": "WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
+              "RelativeToolTip": "WebApi\\Repositories\\FiltreRepositories\\FiltreRepo.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAYwDUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T13:11:32.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FiltreDto.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\filtreDto\\FiltreDto.cs",
               "RelativeDocumentMoniker": "WebApi\\Dtos\\filtreDto\\FiltreDto.cs",
               "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\filtreDto\\FiltreDto.cs",
               "RelativeToolTip": "WebApi\\Dtos\\filtreDto\\FiltreDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAvAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T13:10:26.74Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Program.cs",
               "RelativeDocumentMoniker": "WebApi\\Program.cs",
@@ -81,18 +81,17 @@
               "RelativeToolTip": "WebApi\\Program.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAIwBUAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T13:08:35.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T13:08:35.718Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "FiltreControllers.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\FiltreControllers.cs",
               "RelativeDocumentMoniker": "WebApi\\Controllers\\FiltreControllers.cs",
               "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\FiltreControllers.cs",
               "RelativeToolTip": "WebApi\\Controllers\\FiltreControllers.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAtwBEAAAAZAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAywCAAAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T09:13:56.623Z",
               "EditorCaption": ""
