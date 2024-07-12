@@ -38,7 +38,7 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<List<ResultUrunlerDto>> GetResultUrunlersAsync()
         {
-            string query = "SELECT UrunID, UrunAdi , UrunFiyati,UrunAciklamasi, KategoriAdi ,UrunBarcode FROM " +
+            string query = "SELECT * FROM " +
                 "Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID";
             using (var connection = _context.CreateConnection()) 
             {
@@ -103,7 +103,7 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<ResultUrunlerDto> GetUrunByBarCodeAsync(string UrunBarcode)
         {
-            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati, KategoriAdi,UrunBarcode FROM Urun INNER JOIN Kategori " +
+            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati, UrunFavorite  ,KategoriAdi,UrunBarcode FROM Urun INNER JOIN Kategori " +
                 "ON Urun.KategoriID = Kategori.KategoriID WHERE UrunBarcode = @UrunBarcode";
             var parameters = new DynamicParameters();
             parameters.Add("@UrunBarcode", UrunBarcode);

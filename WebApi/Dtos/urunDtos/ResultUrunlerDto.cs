@@ -8,5 +8,6 @@
         public string KategoriAdi { get; set; }
         public double UrunFiyati { get; set; }
         public string UrunBarcode { get; set; }
+        public bool UrunFavori { get; set; }
     }
 }
