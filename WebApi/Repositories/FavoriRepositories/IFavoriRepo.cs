@@ -6,5 +6,6 @@ namespace WebApi.Repositories.FavoriRepositories
     {   
         Task<string> FavorilereEkle(FavoriEkleDto favoriEkleDto);
         Task<List<FavoriUrunleriGetirDto>> FavoriUrunleriGetir();
+        Task<bool> FavoriMiKontrol(int UrunID,int KullaniciID);
     }
 }

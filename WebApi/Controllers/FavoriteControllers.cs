@@ -45,5 +45,20 @@ namespace WebApi.Controllers
             var result = await _favoriRepo.FavoriUrunleriGetir();
             return Ok(result);
         }
+
+        [HttpGet("/api/FavoriteControllers/FavoriMi")]
+
+        public async Task<IActionResult> FavoriMi(int UrunID, int KullaniciID)
+        {
+            var result = await _favoriRepo.FavoriMiKontrol(UrunID,KullaniciID);
+            if (result)
+            {
+                return Ok(true);
+            }
+            else
+            {
+                return Ok(false);
+            }
+        }
     }
 }

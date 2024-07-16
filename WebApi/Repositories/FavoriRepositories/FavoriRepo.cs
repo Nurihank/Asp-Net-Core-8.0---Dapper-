@@ -63,6 +63,29 @@ namespace WebApi.Repositories.FavoriRepositories
             }
         }
 
+        public async Task<bool> FavoriMiKontrol(int UrunID, int KullaniciID)
+        {
+            string checkQuery = "SELECT COUNT(1) FROM FavoriUrunler WHERE UrunID = @UrunID AND KullaniciID = @KullaniciID";
+            var parameters = new DynamicParameters();
+            parameters.Add("@UrunID",UrunID);
+            parameters.Add("@KullaniciID", KullaniciID);
+
+            using(var connection = _context.CreateConnection())
+            {
+                var count = await connection.ExecuteScalarAsync<int>(checkQuery, parameters); 
+                Console.WriteLine(count);
+                if(count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+        }
+
         public async Task<List<FavoriUrunleriGetirDto>> FavoriUrunleriGetir()
         {
             string query = "SELECT * FROM Urun WHERE UrunFavori = 1";

@@ -47,6 +47,66 @@ namespace WebApi.Repositories.KullaniciRepositories
             }
         }
 
+        public async Task<(int id, string message, int statusCode)> KullaniciKayit(KullaniciKayitDto kullaniciKayitDto)
+        {
+            var existKullaniciAdiQuery = "SELECT COUNT(1) FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
+            var kaParameters = new DynamicParameters();
+            kaParameters.Add("@KullaniciAdi", kullaniciKayitDto.KullaniciAdi);
+            
+            var existEpostaQuery = "SELECT COUNT(1) FROM Kullanici WHERE Eposta = @Eposta";
+            var epParameters = new DynamicParameters();
+            epParameters.Add("@Eposta", kullaniciKayitDto.Eposta);
 
+            var existTelNoQuery = "SELECT COUNT(1) FROM Kullanici WHERE TelefonNo = @TelefonNo";
+            var tnParameters = new DynamicParameters();
+            tnParameters.Add("@TelefonNo", kullaniciKayitDto.TelNo);
+
+            var insertQuery = "INSERT INTO Kullanici (KullaniciAdi, Eposta, Sifre, TelefonNo, Cinsiyet, Yas) VALUES (@KullaniciAdi, @Eposta, @Sifre, @TelefonNo, @Cinsiyet, @Yas)";
+            var parameters = new DynamicParameters();
+            parameters.Add("@KullaniciAdi", kullaniciKayitDto.KullaniciAdi);
+            parameters.Add("@Eposta", kullaniciKayitDto.Eposta);
+            parameters.Add("@Sifre", kullaniciKayitDto.Sifre);
+            parameters.Add("@TelefonNo", kullaniciKayitDto.TelNo);
+            parameters.Add("@Cinsiyet", kullaniciKayitDto.Cinsiyet);
+            parameters.Add("@Yas", kullaniciKayitDto.Yas);
+
+            using (var connection = _context.CreateConnection())
+            {
+                var countka = await connection.ExecuteScalarAsync<int>(existKullaniciAdiQuery, kaParameters);
+                if(countka == 0)
+
+                {
+                    Console.WriteLine("1 = "+countka);
+                    var countep = await connection.ExecuteScalarAsync<int>(existEpostaQuery, epParameters);
+                    if(countep == 0)
+                    {
+                        Console.WriteLine("2 = " + countep);
+                        var counttn = await connection.ExecuteScalarAsync<int>(existTelNoQuery,tnParameters);
+                        if(counttn == 0)
+                        {
+                            Console.WriteLine("3 = " + counttn);
+                            await connection.ExecuteAsync(insertQuery, parameters);  //kullaniciyi ekledik
+
+                            var getUserQuery = "SELECT KullaniciID FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
+                            int userID = await connection.ExecuteScalarAsync<int>(getUserQuery, kaParameters);
+                            Console.WriteLine("4 - "+userID);
+                            return (userID, "okey",200);
+                        }
+                        else
+                        {
+                            return (0, "Böyle Bir Telefon No Vardir", 0);
+                        }
+                    }
+                    else
+                    {
+                        return (0, "Böyle Bir Eposta Vardir",0);
+                    }
+                }
+                else
+                {
+                    return (0, "Böyle Bir Kullanici Adi Vardir", 0);
+                }
+            }
+        }
     }
 }
