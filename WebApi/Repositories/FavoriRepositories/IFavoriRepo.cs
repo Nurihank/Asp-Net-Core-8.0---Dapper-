@@ -5,5 +5,6 @@ namespace WebApi.Repositories.FavoriRepositories
     public interface IFavoriRepo
     {   
         Task<string> FavorilereEkle(FavoriEkleDto favoriEkleDto);
+        Task<List<FavoriUrunleriGetirDto>> FavoriUrunleriGetir();
     }
 }

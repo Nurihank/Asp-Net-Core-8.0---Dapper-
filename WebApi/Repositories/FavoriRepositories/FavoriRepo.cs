@@ -16,13 +16,12 @@ namespace WebApi.Repositories.FavoriRepositories
             var sparameters = new DynamicParameters();
             sparameters.Add("@UrunID", favoriEkleDto.UrunID);
 
-            var checkQuery = "SELECT UrunFavori FROM Urun Where UrunID = @UrunID";
+            var checkQuery = "SELECT CASE WHEN UrunFavori = 'true' THEN 'true'  ELSE 'false'  END AS IsFavori FROM Urun WHERE UrunID = @UrunID";
             var cparameters = new DynamicParameters();
             cparameters.Add("@UrunID", favoriEkleDto.UrunID);
-         
 
-            var updateQuery = "UPDATE Urun (UrunFavori) VALUES(@UrunFavori) WHERE UrunID = @id";
-            var parameters = new DynamicParameters();
+            var updateQuery = "UPDATE Urun Set UrunFavori = @UrunFavori WHERE UrunID = @UrunID ";
+            var parameters = new DynamicParameters();   
             parameters.Add("@UrunID", favoriEkleDto.UrunID);
             parameters.Add("@UrunFavori", favoriEkleDto.UrunFavori);
 
@@ -30,24 +29,49 @@ namespace WebApi.Repositories.FavoriRepositories
             {
                 var exist = await connection.ExecuteScalarAsync<int>(selectedQuery, sparameters);
                 var check = await connection.ExecuteScalarAsync<string>(checkQuery, cparameters);
-                Console.Write(check);
+
+                Console.WriteLine(check);
+                Console.WriteLine(check);
+
                 if (exist == 0)
                 {
-                    return "0";
+                    return "0"; // Product does not exist
                 }
-                else if(check == "true")
+                else if (check.Equals("true")) // Check against string "true"
                 {
-                    return "1";
+                    Console.WriteLine("burda");
+                    var updateDeleteQuery = "UPDATE Urun Set UrunFavori = 0 WHERE UrunID = @UrunID ";
+                    var DUparameters = new DynamicParameters();
+                    DUparameters.Add("@UrunID", favoriEkleDto.UrunID);
+                    Console.WriteLine(favoriEkleDto.UrunID);
+                    try
+                    {
+                        await connection.ExecuteAsync(updateDeleteQuery, DUparameters);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error updating UrunFavori: {ex.Message}");
+                        throw; // Optional: rethrow if you want to handle it upstream
+                    } 
+                    return "1"; // Already a favorite
                 }
                 else
                 {
                     await connection.ExecuteAsync(updateQuery, parameters);
-                    return "2";
+                    return "2"; // Successfully updated
                 }
             }
+        }
 
+        public async Task<List<FavoriUrunleriGetirDto>> FavoriUrunleriGetir()
+        {
+            string query = "SELECT * FROM Urun WHERE UrunFavori = 1";
 
-            
+            using(var connection = _context.CreateConnection())
+            {
+                var result = await connection.QueryAsync<FavoriUrunleriGetirDto>(query);
+                return result.ToList();
+            }
         }
     }
 }

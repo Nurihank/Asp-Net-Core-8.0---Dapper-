@@ -2,6 +2,7 @@ using WebApi.Models.DapperContext;
 using WebApi.Repositories.FavoriRepositories;
 using WebApi.Repositories.FiltreRepositories;
 using WebApi.Repositories.KategoriRepositories;
+using WebApi.Repositories.KullaniciRepositories;
 using WebApi.Repositories.UrunRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,7 @@ builder.Services.AddTransient<IUrunRepo, UrunRepo>();
 builder.Services.AddTransient<IKategoriRepo, KategoriRepo>();
 builder.Services.AddTransient<IFiltreRepo, FiltreRepo>();
 builder.Services.AddTransient<IFavoriRepo, FavoriRepo>();
+builder.Services.AddTransient<IKullaniciRepo, KullaniciRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using WebApi.Dtos.kategoriDtos;
+
 using WebApi.Models.DapperContext;
+
 
 namespace WebApi.Repositories.KategoriRepositories
 {
@@ -17,7 +19,7 @@ namespace WebApi.Repositories.KategoriRepositories
             var parameters = new DynamicParameters();
             parameters.Add("@adi", createKategoriDto.KategoriAdi);
 
-            using(var connection = _context.CreateConnection())
+            using (var connection = _context.CreateConnection())
             {
                 var exists = await connection.ExecuteScalarAsync<int>(selectQuery, parameters);
                 if (exists == 1)
@@ -37,10 +39,11 @@ namespace WebApi.Repositories.KategoriRepositories
             var selectQuery = "SELECT COUNT(1) FROM Kategori WHERE KategoriID = @id";
             var DeleteQuery = "DELETE FROM Kategori WHERE KategoriID = @id";
 
+
             var parameters = new DynamicParameters();
             parameters.Add("@id", deleteKategoriDto.KategoriID);
 
-            using( var connection = _context.CreateConnection())
+            using (var connection = _context.CreateConnection())
             {
                 var exists = await connection.ExecuteScalarAsync<int>(selectQuery, parameters);
                 if (exists == 1)
@@ -61,7 +64,7 @@ namespace WebApi.Repositories.KategoriRepositories
 
             using (var connection = _context.CreateConnection())
             {
-                var values =  await connection.QueryAsync<GetKategoriDto>(query);
+                var values = await connection.QueryAsync<GetKategoriDto>(query);
                 return values.ToList();
             }
         }
@@ -72,7 +75,7 @@ namespace WebApi.Repositories.KategoriRepositories
             var parameters = new DynamicParameters();
             parameters.Add("@KategoriID", KategoriID);
 
-            using( var connection = _context.CreateConnection())
+            using (var connection = _context.CreateConnection())
             {
                 var values = await connection.QueryAsync<ProductByCategoryIDDto>(query, parameters);
                 return values.ToList();
@@ -87,19 +90,27 @@ namespace WebApi.Repositories.KategoriRepositories
             parameters.Add("adi", updateKategoriDto.KategoriAdi);
             parameters.Add("id", updateKategoriDto.KategoriID);
 
-            using(var connection = _context.CreateConnection())
+            using (var connection = _context.CreateConnection())
             {
                 var exists = await connection.ExecuteScalarAsync<int>(selectQuery, parameters);
-                if(exists == 1)
+                if (exists == 1)
                 {
                     await connection.ExecuteAsync(DeleteQuery, parameters);
                     return true;
+
+
+
+
+
+
                 }
                 else
                 {
                     return false;
                 }
+
             }
+
         }
     }
 }

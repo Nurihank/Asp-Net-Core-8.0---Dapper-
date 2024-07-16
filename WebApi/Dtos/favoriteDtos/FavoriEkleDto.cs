@@ -2,7 +2,7 @@
 {
     public class FavoriEkleDto
     {
-        public string UrunID { get; set; }
+        public int UrunID { get; set; }
         public bool UrunFavori { get; set; }
     }
 }
