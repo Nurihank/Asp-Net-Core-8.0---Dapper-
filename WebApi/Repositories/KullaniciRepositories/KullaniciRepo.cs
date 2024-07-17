@@ -11,6 +11,50 @@ namespace WebApi.Repositories.KullaniciRepositories
         {
             _context = context;
         }
+
+        public async Task<KullaniciBilgileriDto> KullaniciBilgileri(int id)
+        {
+            var query = "SELECT * FROM Kullanici WHERE KullaniciID = @KullaniciID";
+            var parameters = new DynamicParameters();
+            parameters.Add("@KullaniciID", id);
+
+            using (var connection = _context.CreateConnection())
+            {
+                var user = await connection.QuerySingleOrDefaultAsync<KullaniciBilgileriDto>(query, parameters);
+                return user;
+            }
+        }
+
+        public async Task<bool> KullaniciBilgileriGuncelle(KullaniciBilgileriGuncelleDto kullaniciBilgileriGuncelleDto)
+        {
+            var updateQuery = "UPDATE Kullanici SET Yas = @Yas, TelefonNo = @telno, Cinsiyet = @cinsiyet WHERE KullaniciID = @kid";
+            var parameters = new DynamicParameters();
+            parameters.Add("@Yas", kullaniciBilgileriGuncelleDto.Yas);
+            parameters.Add("@telno", kullaniciBilgileriGuncelleDto.TelefonNo);
+            parameters.Add("@cinsiyet", kullaniciBilgileriGuncelleDto.Cinsiyet);
+            parameters.Add("@kid", kullaniciBilgileriGuncelleDto.KullaniciID);
+
+            Console.WriteLine(kullaniciBilgileriGuncelleDto.Yas);
+            Console.WriteLine(kullaniciBilgileriGuncelleDto.TelefonNo);
+            Console.WriteLine(kullaniciBilgileriGuncelleDto.Cinsiyet);
+            Console.WriteLine(kullaniciBilgileriGuncelleDto.KullaniciID);
+            using (var connection = _context.CreateConnection())
+            {
+                var affectedRows = await connection.ExecuteAsync(updateQuery, parameters);
+                Console.WriteLine(affectedRows);
+                if(affectedRows > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+        }
+
+
         public async Task<(string id, string message, int statusCode)> KullaniciGirisi(KullaniciGirisDto kullaniciGirisDto)
         {
             string existQuery = "SELECT COUNT(1) FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
@@ -59,14 +103,14 @@ namespace WebApi.Repositories.KullaniciRepositories
 
             var existTelNoQuery = "SELECT COUNT(1) FROM Kullanici WHERE TelefonNo = @TelefonNo";
             var tnParameters = new DynamicParameters();
-            tnParameters.Add("@TelefonNo", kullaniciKayitDto.TelNo);
+            tnParameters.Add("@TelefonNo", kullaniciKayitDto.TelefonNo);
 
             var insertQuery = "INSERT INTO Kullanici (KullaniciAdi, Eposta, Sifre, TelefonNo, Cinsiyet, Yas) VALUES (@KullaniciAdi, @Eposta, @Sifre, @TelefonNo, @Cinsiyet, @Yas)";
             var parameters = new DynamicParameters();
             parameters.Add("@KullaniciAdi", kullaniciKayitDto.KullaniciAdi);
             parameters.Add("@Eposta", kullaniciKayitDto.Eposta);
             parameters.Add("@Sifre", kullaniciKayitDto.Sifre);
-            parameters.Add("@TelefonNo", kullaniciKayitDto.TelNo);
+            parameters.Add("@TelefonNo", kullaniciKayitDto.TelefonNo);
             parameters.Add("@Cinsiyet", kullaniciKayitDto.Cinsiyet);
             parameters.Add("@Yas", kullaniciKayitDto.Yas);
 

@@ -33,7 +33,7 @@ namespace WebApi.Repositories.UrunRepositories
                 try
                 {
                     var result = await connection.ExecuteAsync(query, parameters);
-                    return result > 0; //eğer eklendiyse 1 dönderir
+                    return result > 0; //eğer eklendiyse 1 dönderir 
                 }
                 catch (Exception)
                 {

@@ -1,16 +1,13 @@
-﻿using System.Numerics;
-
-namespace WebApi.Dtos.kullaniciDtos
+﻿namespace WebApi.Dtos.kullaniciDtos
 {
-    public class KullaniciKayitDto
-    { 
+    public class KullaniciBilgileriDto
+    {
+        public int KullaniciID { get; set; }
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
         public int TelefonNo { get; set; }
         public string Eposta { get; set; }
         public bool Cinsiyet { get; set; }
         public int Yas { get; set; }
-
-
     }
 }

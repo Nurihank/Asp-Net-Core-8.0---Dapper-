@@ -24,11 +24,11 @@ namespace WebApi.Controllers
             var (userId, message, statusCode) = await _kullaniciRepo.KullaniciGirisi(kullaniciGirisDto);
 
             if (statusCode == 200)
-            {              
+            {
                 return Ok(new { userId, message });
             }
             else
-            {   
+            {
                 return Ok(message);
             }
         }
@@ -37,15 +37,30 @@ namespace WebApi.Controllers
 
         public async Task<IActionResult> KullaniciKayit(KullaniciKayitDto kullaniciKayitDto)
         {
-            var (userId , message, statusCode) = await _kullaniciRepo.KullaniciKayit(kullaniciKayitDto);
-            if(statusCode == 200)
+            var (userId, message, statusCode) = await _kullaniciRepo.KullaniciKayit(kullaniciKayitDto);
+            if (statusCode == 200)
             {
-                return Ok(new{ userId , message });
+                return Ok(new { userId, message });
             }
             else
             {
-                return Ok(new{ message });
+                return Ok(new { message });
             }
+        }
+
+        [HttpGet("/api/KullaniciControllers/KullaniciBilgileri/{id}")]
+
+        public async Task<IActionResult> KullaniciBilgileri(int id)
+        {
+            var user =  await _kullaniciRepo.KullaniciBilgileri(id);
+            return Ok(user);
+        }
+
+        [HttpPut("/api/KullaniciControllers/KullaniciGuncelle")]
+        public async Task<IActionResult> KullaniciGuncelle(KullaniciBilgileriGuncelleDto kullaniciBilgileriGuncelleDto)
+        {
+            var result = await _kullaniciRepo.KullaniciBilgileriGuncelle(kullaniciBilgileriGuncelleDto); 
+            return Ok(result);
         }
     }
 }
