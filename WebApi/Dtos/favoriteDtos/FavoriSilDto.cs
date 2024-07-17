@@ -1,6 +1,6 @@
 ﻿namespace WebApi.Dtos.favoriteDtos
 {
-    public class FavoriEkleDto
+    public class FavoriSilDto
     {
         public int UrunID { get; set; }
         public int KullaniciID { get; set; }

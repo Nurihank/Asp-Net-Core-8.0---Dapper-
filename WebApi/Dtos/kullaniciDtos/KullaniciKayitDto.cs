@@ -6,7 +6,7 @@ namespace WebApi.Dtos.kullaniciDtos
     { 
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
-        public int TelNo { get; set; }
+        public string TelNo { get; set; }
         public string Eposta { get; set; }
         public bool Cinsiyet { get; set; }
         public int Yas { get; set; }

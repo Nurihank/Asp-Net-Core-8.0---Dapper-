@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\kullanicirepositories\\kullanicirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\kullanicirepositories\\kullanicirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\urunrepositories\\urunrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\urunrepositories\\urunrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\kullanicirepositories\\ikullanicirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\kullanicirepositories\\ikullanicirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\urunrepositories\\iurunrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\urunrepositories\\iurunrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\kullanicidtos\\kullanicikayitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\kullanicidtos\\kullanicikayitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\kullanicicontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\kullanicicontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\uruncontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\uruncontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "KullaniciControllers.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KullaniciControllers.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\KullaniciControllers.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KullaniciControllers.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\KullaniciControllers.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAA1wDEAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T14:10:26.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KullaniciRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KullaniciRepositories\\KullaniciRepo.cs",
-              "RelativeDocumentMoniker": "WebApi\\Repositories\\KullaniciRepositories\\KullaniciRepo.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KullaniciRepositories\\KullaniciRepo.cs",
-              "RelativeToolTip": "WebApi\\Repositories\\KullaniciRepositories\\KullaniciRepo.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAmwFsAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T13:46:53.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IKullaniciRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KullaniciRepositories\\IKullaniciRepo.cs",
-              "RelativeDocumentMoniker": "WebApi\\Repositories\\KullaniciRepositories\\IKullaniciRepo.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KullaniciRepositories\\IKullaniciRepo.cs",
-              "RelativeToolTip": "WebApi\\Repositories\\KullaniciRepositories\\IKullaniciRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAARAAAA",
+              "Title": "IUrunRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
+              "RelativeDocumentMoniker": "WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
+              "RelativeToolTip": "WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T13:45:26.308Z",
+              "WhenOpened": "2024-07-17T09:15:12.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "KullaniciKayitDto.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
-              "RelativeDocumentMoniker": "WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
-              "RelativeToolTip": "WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Title": "UrunControllers.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\UrunControllers.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UrunControllers.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\UrunControllers.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UrunControllers.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T13:42:01.81Z",
+              "WhenOpened": "2024-07-17T09:14:56.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UrunRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "RelativeDocumentMoniker": "WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "RelativeToolTip": "WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAUwCMAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T09:08:11.756Z",
               "EditorCaption": ""
             }
           ]

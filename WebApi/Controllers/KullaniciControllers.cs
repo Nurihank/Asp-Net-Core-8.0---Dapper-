@@ -24,13 +24,11 @@ namespace WebApi.Controllers
             var (userId, message, statusCode) = await _kullaniciRepo.KullaniciGirisi(kullaniciGirisDto);
 
             if (statusCode == 200)
-            {
-                Console.WriteLine($"User ID: {userId}, Message: {message}");
+            {              
                 return Ok(new { userId, message });
             }
             else
-            {
-                Console.WriteLine($"Error: {message}");
+            {   
                 return Ok(message);
             }
         }
@@ -40,14 +38,13 @@ namespace WebApi.Controllers
         public async Task<IActionResult> KullaniciKayit(KullaniciKayitDto kullaniciKayitDto)
         {
             var (userId , message, statusCode) = await _kullaniciRepo.KullaniciKayit(kullaniciKayitDto);
-
             if(statusCode == 200)
             {
                 return Ok(new{ userId , message });
             }
             else
             {
-                return Ok(message);
+                return Ok(new{ message });
             }
         }
     }

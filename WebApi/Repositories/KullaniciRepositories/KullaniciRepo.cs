@@ -52,7 +52,7 @@ namespace WebApi.Repositories.KullaniciRepositories
             var existKullaniciAdiQuery = "SELECT COUNT(1) FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
             var kaParameters = new DynamicParameters();
             kaParameters.Add("@KullaniciAdi", kullaniciKayitDto.KullaniciAdi);
-            
+ 
             var existEpostaQuery = "SELECT COUNT(1) FROM Kullanici WHERE Eposta = @Eposta";
             var epParameters = new DynamicParameters();
             epParameters.Add("@Eposta", kullaniciKayitDto.Eposta);
@@ -73,23 +73,22 @@ namespace WebApi.Repositories.KullaniciRepositories
             using (var connection = _context.CreateConnection())
             {
                 var countka = await connection.ExecuteScalarAsync<int>(existKullaniciAdiQuery, kaParameters);
-                if(countka == 0)
+                if (countka == 0)
 
                 {
-                    Console.WriteLine("1 = "+countka);
+                
                     var countep = await connection.ExecuteScalarAsync<int>(existEpostaQuery, epParameters);
-                    if(countep == 0)
+                    if (countep == 0)
                     {
-                        Console.WriteLine("2 = " + countep);
+                        
                         var counttn = await connection.ExecuteScalarAsync<int>(existTelNoQuery,tnParameters);
-                        if(counttn == 0)
+                        if (counttn == 0)
                         {
-                            Console.WriteLine("3 = " + counttn);
+                          
                             await connection.ExecuteAsync(insertQuery, parameters);  //kullaniciyi ekledik
 
                             var getUserQuery = "SELECT KullaniciID FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
                             int userID = await connection.ExecuteScalarAsync<int>(getUserQuery, kaParameters);
-                            Console.WriteLine("4 - "+userID);
                             return (userID, "okey",200);
                         }
                         else

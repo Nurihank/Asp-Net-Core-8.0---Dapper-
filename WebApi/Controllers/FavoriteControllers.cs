@@ -16,35 +16,20 @@ namespace WebApi.Controllers
             _favoriRepo = favoriRepo;
         }        
 
-        [HttpPut]
-        public async Task<IActionResult> FavoriEKle(FavoriEkleDto favoriEkleDto)
+        [HttpPut("/api/FavoriteControllers/FavoriEkle")]
+       public async Task<IActionResult> FavoriEkle(FavoriEkleDto favoriEkleDto)
         {
-            string FavoriEkle = await _favoriRepo.FavorilereEkle(favoriEkleDto);
-            Console.WriteLine(FavoriEkle);
-            if(FavoriEkle == "0")
+            var result = await _favoriRepo.FavorilereEkle(favoriEkleDto);
+            if(result == true)
             {
-                return NotFound("Öyle bir ürün bulunamadı");
-            }
-            else if(FavoriEkle == "1")
-            {
-                return Ok("Ürün favorilerden kaldırıldı");
-            }
-            else if (FavoriEkle == "2")
-            {
-                return Ok("Ürün Favorilere Eklendi");
+                return Ok("Favoriye Eklendi");
             }
             else
             {
-                return BadRequest("Hiç");
+                return Ok("Başarısız Oldu");
             }
         }
 
-        [HttpGet]
-        public async Task<IActionResult> FavorileriGetir()
-        {
-            var result = await _favoriRepo.FavoriUrunleriGetir();
-            return Ok(result);
-        }
 
         [HttpGet("/api/FavoriteControllers/FavoriMi")]
 
@@ -60,5 +45,20 @@ namespace WebApi.Controllers
                 return Ok(false);
             }
         }
+
+        [HttpDelete("/api/FavoriteControllers/FavoriSil")]
+        public async Task<IActionResult> FavoriSil(FavoriSilDto favoriSilDto)
+        {
+            var result =  await _favoriRepo.FavoriSil(favoriSilDto);
+            return Ok(result);
+        }
+
+        [HttpGet("/api/FavoriteControllers/FavoriUrunler")]
+        public async Task<IActionResult> FavoriUrunler(int kullaniciId)
+        {
+            var result = await _favoriRepo.FavoriUrunleriGetir(kullaniciId);
+            return Ok(result);
+        }
+
     }
 }

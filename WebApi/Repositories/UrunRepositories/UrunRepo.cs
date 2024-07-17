@@ -18,23 +18,33 @@ namespace WebApi.Repositories.UrunRepositories
             _context = context;
         }
 
-        public async void CreateUrun(CreateUrunlerDto createUrunlerDto)
+        public async Task<bool> CreateUrun(CreateUrunlerDto createUrunlerDto)
         {
-            string query = "INSERT INTO Urun (UrunAdi,UrunAciklamasi,KategoriID,UrunFiyati,UrunBarcode) values(@adi,@aciklama,@kategoriID,@UrunFiyati,@UrunBarcode)";
+            string query = "INSERT INTO Urun (UrunAdi, UrunAciklamasi, KategoriID, UrunFiyati, UrunBarcode) VALUES (@adi, @aciklama, @kategoriID, @UrunFiyati, @UrunBarcode)";
             var parameters = new DynamicParameters();
-            parameters.Add("@adi",createUrunlerDto.UrunAdi);
+            parameters.Add("@adi", createUrunlerDto.UrunAdi);
             parameters.Add("@aciklama", createUrunlerDto.UrunAciklamasi);
             parameters.Add("@kategoriID", createUrunlerDto.KategoriID);
-            parameters.Add("@UrunFiyati",createUrunlerDto.UrunFiyati);
+            parameters.Add("@UrunFiyati", createUrunlerDto.UrunFiyati);
             parameters.Add("@UrunBarcode", createUrunlerDto.UrunBarcode);
 
             using (var connection = _context.CreateConnection())
             {
-                await connection.ExecuteAsync(query,parameters);
+                try
+                {
+                    var result = await connection.ExecuteAsync(query, parameters);
+                    return result > 0; //eğer eklendiyse 1 dönderir
+                }
+                catch (Exception)
+                {
+                    // Hata durumunda false döner
+                    return false;
+                }
             }
         }
 
-        
+
+
 
         public async Task<List<ResultUrunlerDto>> GetResultUrunlersAsync()
         {
@@ -103,8 +113,9 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<ResultUrunlerDto> GetUrunByBarCodeAsync(string UrunBarcode)
         {
-            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati, UrunFavorite  ,KategoriAdi,UrunBarcode FROM Urun INNER JOIN Kategori " +
+            string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati ,KategoriAdi,UrunBarcode FROM Urun INNER JOIN Kategori " +
                 "ON Urun.KategoriID = Kategori.KategoriID WHERE UrunBarcode = @UrunBarcode";
+            Console.Write(UrunBarcode);
             var parameters = new DynamicParameters();
             parameters.Add("@UrunBarcode", UrunBarcode);
 
