@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
+using Microsoft.AspNetCore.Http.Connections;
 
 namespace WebApi.Repositories.KullaniciRepositories
 {
@@ -59,7 +60,7 @@ namespace WebApi.Repositories.KullaniciRepositories
         }
 
 
-        public async Task<(string id, string message, int statusCode)> KullaniciGirisi(KullaniciGirisDto kullaniciGirisDto)
+        public async Task<(string id, string message, int statusCode,string image)> KullaniciGirisi(KullaniciGirisDto kullaniciGirisDto)
         {
             string existQuery = "SELECT COUNT(1) FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
             var existParameters = new DynamicParameters();
@@ -81,16 +82,19 @@ namespace WebApi.Repositories.KullaniciRepositories
                         string idQuery = "SELECT KullaniciID FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
                         string id = await connection.ExecuteScalarAsync<string>(idQuery, existParameters);
 
-                        return (id, "Başarıyla Giriş Yaptın", 200); // Success
+                        string imageQuery = "SELECT ImagePath FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi";
+                        string image = await connection.ExecuteScalarAsync<string>(imageQuery, existParameters);
+
+                        return (id, "Başarıyla Giriş Yaptın", 200,image); // Success
                     }
                     else
                     {
-                        return (null, "Şifre veya Kullanıcı Adı Hatalıdır", 400); // Bad Request
+                        return (null, "Şifre veya Kullanıcı Adı Hatalıdır", 400,null); // Bad Request
                     }
                 }
                 else
                 {
-                    return (null, "Böyle Bir Kullanıcı Adı Yoktur", 404); // Not Found
+                    return (null, "Böyle Bir Kullanıcı Adı Yoktur", 404,null); // Not Found
                 }
             }
         }
@@ -153,6 +157,38 @@ namespace WebApi.Repositories.KullaniciRepositories
                 {
                     return (0, "Böyle Bir Kullanici Adi Vardir", 0);
                 }
+            }
+        }
+
+        public async Task<string> ProfilResmiGetir(int KullaniciID)
+        {
+            var query = "SELECT ImagePath FROM Kullanici WHERE KullaniciID = @id";
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", KullaniciID);
+
+            using(var connection = _context.CreateConnection())
+            {
+                var result = await connection.ExecuteScalarAsync<string>(query, parameters);
+                Console.Write("resim "+result);
+                if(result == null)
+                {
+                    return "null";
+                }
+                return result;
+            }
+        }
+
+        public async Task<bool> ProfilResmiKaydet(ProfilResmiKaydetDto profilResmiKaydetDto)
+        {
+            var query = "UPDATE Kullanici SET ImagePath = @path WHERE KullaniciID = @id";
+            var parameters = new DynamicParameters();
+            parameters.Add("path", profilResmiKaydetDto.ImagePath);
+            parameters.Add("@id", profilResmiKaydetDto.Id);
+
+            using(var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteScalarAsync<bool>(query, parameters);
+                return true;
             }
         }
 

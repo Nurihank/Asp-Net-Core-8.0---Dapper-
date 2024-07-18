@@ -21,11 +21,11 @@ namespace WebApi.Controllers
         [HttpPost("/api/KullaniciControllers/KullaniciGiris")]
         public async Task<IActionResult> KullaniciGiris([FromBody] KullaniciGirisDto kullaniciGirisDto)
         {
-            var (userId, message, statusCode) = await _kullaniciRepo.KullaniciGirisi(kullaniciGirisDto);
+            var (userId, message, statusCode,image) = await _kullaniciRepo.KullaniciGirisi(kullaniciGirisDto);
 
             if (statusCode == 200)
             {
-                return Ok(new { userId, message });
+                return Ok(new { userId, message,image });
             }
             else
             {
@@ -81,6 +81,21 @@ namespace WebApi.Controllers
         public async Task<IActionResult> SifreDegistir(SifreYenileDto sifreYenileDto)
         {
             var result = await _kullaniciRepo.SifreDegistir(sifreYenileDto);
+            return Ok(result);
+        }
+
+        [HttpGet("/api/KullaniciControllers/ProfilResmi/{kullaniciID}")]
+
+        public async Task<IActionResult> ProfilResmiGetir(int kullaniciID)
+        {
+            var result = await _kullaniciRepo.ProfilResmiGetir(kullaniciID);
+            return Ok(result);
+        }
+
+        [HttpPut("/api/KullaniciControllers/ProfilResmiKaydet")]
+        public async Task<IActionResult> ProfilResmiKaydet(ProfilResmiKaydetDto profilResmiKaydetDto)
+        {
+            var result = await _kullaniciRepo.ProfilResmiKaydet(profilResmiKaydetDto);
             return Ok(result);
         }
     }
