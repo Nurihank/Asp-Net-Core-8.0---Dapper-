@@ -1,6 +1,10 @@
 ﻿using Dapper;
 using WebApi.Dtos.kullaniciDtos;
 using WebApi.Models.DapperContext;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace WebApi.Repositories.KullaniciRepositories
 {
@@ -150,6 +154,97 @@ namespace WebApi.Repositories.KullaniciRepositories
                     return (0, "Böyle Bir Kullanici Adi Vardir", 0);
                 }
             }
+        }
+
+        public async Task<bool> SifreDegistir(SifreYenileDto sifreYenileDto)
+        {
+            var query = "UPDATE Kullanici SET Sifre = @Sifre WHERE KullaniciAdi = @KullaniciAdi";
+            var parameters = new DynamicParameters();
+            parameters.Add("@Sifre", sifreYenileDto.Sifre);
+            parameters.Add("@KullaniciAdi", sifreYenileDto.KullaniciAdi);
+
+            using(var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteScalarAsync<bool>(query, parameters);
+                return true;
+            }
+        }
+
+        public async Task<int> SifremiUnuttum(SifremiUnuttumDto sifremiUnuttumDto)
+        {
+            var query = "SELECT Eposta FROM Kullanici WHERE KullaniciAdi = @KullaniciAdi AND Eposta = @Eposta";
+            var parameters = new DynamicParameters();
+            parameters.Add("@KullaniciAdi", sifremiUnuttumDto.KullaniciAdi);
+            parameters.Add("@Eposta", sifremiUnuttumDto.Eposta);
+           
+
+            using (var connection = _context.CreateConnection())
+            {
+                var result = await connection.ExecuteScalarAsync<string>(query,parameters);
+                Console.WriteLine(result);
+                if(result == null)
+                {
+                    return 0;
+                    
+                }
+                else
+                {
+
+                    var random = new Random();
+                    int code = random.Next(100000, 999999);
+                    var subject = "Sifremi Unuttum Kodu";
+                    var message = $"İşte girmeniz gereken kod = {code}";
+                    var client = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        EnableSsl = true,
+                        Credentials = new NetworkCredential("kavalcinurihan01@gmail.com", "avlf fwny yfbe efiz")
+                    };
+
+                    var mailMessage = new MailMessage
+                    {
+                        From = new MailAddress("kavalcinurihan01@gmail.com"),
+                        Subject = subject,
+                        Body = message,
+                        IsBodyHtml = true
+                    };
+
+                    mailMessage.To.Add(sifremiUnuttumDto.Eposta);
+
+                    try
+                    {
+                        await client.SendMailAsync(mailMessage);
+                        var codeUpdateQuery = $"UPDATE Kullanici SET SifremiUnuttumKod = {code} WHERE KullaniciAdi = @KullaniciAdi";
+                        var uparameters = new DynamicParameters();
+                        uparameters.Add("@KullaniciAdi", sifremiUnuttumDto.KullaniciAdi);
+                        await connection.ExecuteScalarAsync<string>(codeUpdateQuery, uparameters);
+                        return code;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Mail gönderilirken hata: {ex.Message}");
+                        return 0;
+                    }
+                }
+                
+            }
+
+
+
+        }
+
+        public async Task<bool> SifreYenile(SifreYenileDto sifreYenileDto)
+        {
+            var query = "UPDATE Kullanici SET Sifre = @Sifre WHERE KullaniciAdi = @KullaniciAdi";
+            var parameters = new DynamicParameters();
+            parameters.Add("@Sifre", sifreYenileDto.Sifre);
+            parameters.Add("@KullaniciAdi", sifreYenileDto.KullaniciAdi);
+
+            using(var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteScalarAsync<bool>(query, parameters);
+                return true;
+            }
+
         }
     }
 }

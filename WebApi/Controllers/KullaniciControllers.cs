@@ -62,5 +62,26 @@ namespace WebApi.Controllers
             var result = await _kullaniciRepo.KullaniciBilgileriGuncelle(kullaniciBilgileriGuncelleDto); 
             return Ok(result);
         }
+
+        [HttpPut("/api/KullaniciControllers/KodAl")]
+        public async Task<IActionResult> Sifremiunuttum(SifremiUnuttumDto sifremiUnuttumDto)
+        {
+            var result =  await _kullaniciRepo.SifremiUnuttum(sifremiUnuttumDto);
+            return Ok(result);
+        }
+
+        [HttpPut("/api/KullaniciControllers/SifreYenile")]
+        public async Task<IActionResult> SifreYenile (SifreYenileDto sifreYenileDto)
+        {
+            var result = await _kullaniciRepo.SifreYenile(sifreYenileDto);
+            return Ok(result);
+        }
+
+        [HttpPut("/api/KullaniciControllers/SifreDegistir")]
+        public async Task<IActionResult> SifreDegistir(SifreYenileDto sifreYenileDto)
+        {
+            var result = await _kullaniciRepo.SifreDegistir(sifreYenileDto);
+            return Ok(result);
+        }
     }
 }
