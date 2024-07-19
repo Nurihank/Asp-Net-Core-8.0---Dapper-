@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata;
+using System.Text.RegularExpressions;
 using WebApi.Dtos.urun;
 using WebApi.Dtos.urunDtos;
 using WebApi.Models.DapperContext;
@@ -110,7 +111,7 @@ namespace WebApi.Repositories.UrunRepositories
             }
 
         }
-
+        
         public async Task<ResultUrunlerDto> GetUrunByBarCodeAsync(string UrunBarcode)
         {
             string query = "SELECT UrunID , UrunAdi , UrunAciklamasi ,UrunFiyati ,KategoriAdi,UrunBarcode FROM Urun INNER JOIN Kategori " +
@@ -132,11 +133,27 @@ namespace WebApi.Repositories.UrunRepositories
             var parameters = new DynamicParameters();
             parameters.Add("@UrunAdi", "%" + UrunAdi + "%");
 
+            string qrquery = "SELECT * FROM Urun WHERE UrunBarcode LIKE @UrunAdi";
+
+
+            Regex regex = new Regex(@"^\d+$");
+            bool isNumeric = regex.IsMatch(UrunAdi);
+
+            
 
             using (var connection = _context.CreateConnection())
             {
-                var urun = await connection.QueryAsync<ResultUrunlerDto>(query, parameters);
-                return urun.ToList();
+                if (isNumeric)
+                {
+                    var urun = await connection.QueryAsync<ResultUrunlerDto>(qrquery, parameters);
+                    return urun.ToList();
+                }
+                else
+                {
+                    var urun = await connection.QueryAsync<ResultUrunlerDto>(query, parameters);
+                    return urun.ToList();
+                }
+                
             }
         }
     }
