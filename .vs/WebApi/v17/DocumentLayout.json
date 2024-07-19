@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\kullanicidtos\\kullanicikayitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\kullanicidtos\\kullanicikayitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\kullanicidtos\\kullanicibilgileriguncelledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\kullanicidtos\\kullanicibilgileriguncelledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\kullanicidtos\\kullanicibilgileridto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\kullanicidtos\\kullanicibilgileridto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\uruncontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\uruncontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "KullaniciKayitDto.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\kullaniciDtos\\KullaniciKayitDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAvwAgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T14:14:25.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KullaniciBilgileriGuncelleDto.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriGuncelleDto.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriGuncelleDto.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriGuncelleDto.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriGuncelleDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T14:14:20.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KullaniciBilgileriDto.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriDto.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriDto.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriDto.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\kullaniciDtos\\KullaniciBilgileriDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T14:14:12.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UpdateUrunlerDto.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\urunDtos\\UpdateUrunlerDto.cs",
               "RelativeDocumentMoniker": "WebApi\\Dtos\\urunDtos\\UpdateUrunlerDto.cs",
@@ -38,25 +89,24 @@
               "RelativeToolTip": "WebApi\\Dtos\\urunDtos\\UpdateUrunlerDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T09:30:49.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T09:30:49.599Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UrunControllers.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\UrunControllers.cs",
               "RelativeDocumentMoniker": "WebApi\\Controllers\\UrunControllers.cs",
               "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\UrunControllers.cs",
               "RelativeToolTip": "WebApi\\Controllers\\UrunControllers.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAswGIAAAAAAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAowGIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-19T07:41:25.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "IUrunRepo.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
               "RelativeDocumentMoniker": "WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
@@ -64,12 +114,11 @@
               "RelativeToolTip": "WebApi\\Repositories\\UrunRepositories\\IUrunRepo.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAnwA4AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T07:28:30.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T07:28:30.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UrunRepo.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
               "RelativeDocumentMoniker": "WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
@@ -77,8 +126,7 @@
               "RelativeToolTip": "WebApi\\Repositories\\UrunRepositories\\UrunRepo.cs",
               "ViewState": "AQIAAHEAAAAAAAAAAAAqwIYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T06:29:55.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T06:29:55.836Z"
             }
           ]
         }
