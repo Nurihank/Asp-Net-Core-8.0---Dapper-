@@ -56,9 +56,6 @@ namespace WebApi.Repositories.UrunRepositories
                 var values = await connection.QueryAsync<ResultUrunlerDto>(query);
                 return values.ToList();
             }
-             
-
-
         }
         public async Task<bool> DeleteUrunler(DeleteUrunDto deleteUrunDto)
         {
@@ -83,8 +80,9 @@ namespace WebApi.Repositories.UrunRepositories
 
         public async Task<bool> UpdateUrunler(UpdateUrunlerDto updateUrunlerDto)
         {
+            Console.Write("sad");
             string selectedQuery = "SELECT COUNT(1) FROM Urun WHERE UrunID = @UrunID";
-            string updateQuery = "UPDATE Urun Set UrunAdi = @UrunAdi , UrunAciklamasi=@UrunAciklamasi UrunFiyati = @UrunFiyati, KategoriID=@KategoriID WHERE UrunID = @UrunID";
+            string updateQuery = "UPDATE Urun Set UrunAdi = @UrunAdi , UrunAciklamasi=@UrunAciklamasi, UrunFiyati = @UrunFiyati , UrunBarcode= @UrunBarcode WHERE UrunID = @UrunID";
             
             var Sparameters = new DynamicParameters();
             Sparameters.Add("@UrunID", updateUrunlerDto.UrunID);
@@ -94,7 +92,7 @@ namespace WebApi.Repositories.UrunRepositories
             Uparameters.Add("@UrunFiyati", updateUrunlerDto.UrunFiyati);
             Uparameters.Add("@UrunAdi", updateUrunlerDto.UrunAdi);
             Uparameters.Add("@UrunAciklamasi", updateUrunlerDto.UrunAciklamasi);
-            Uparameters.Add("@KategoriID", updateUrunlerDto.KategoriID);
+            Uparameters.Add("@UrunBarcode", updateUrunlerDto.UrunBarcode);
 
             using (var connection = _context.CreateConnection())
             {
@@ -133,8 +131,9 @@ namespace WebApi.Repositories.UrunRepositories
             var parameters = new DynamicParameters();
             parameters.Add("@UrunAdi", "%" + UrunAdi + "%");
 
-            string qrquery = "SELECT * FROM Urun WHERE UrunBarcode LIKE @UrunAdi";
 
+
+            string qrquery = "SELECT * FROM Urun WHERE UrunBarcode LIKE @UrunAdi";
 
             Regex regex = new Regex(@"^\d+$");
             bool isNumeric = regex.IsMatch(UrunAdi);
@@ -154,6 +153,21 @@ namespace WebApi.Repositories.UrunRepositories
                     return urun.ToList();
                 }
                 
+            }
+        }
+
+        public async Task<ResultUrunlerDto> GetUrunByID(int id)
+        {
+            string query = "SELECT * FROM " +
+                "Urun INNER JOIN Kategori ON Urun.KategoriID = Kategori.KategoriID WHERE UrunID = @id";
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", id);
+
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await  connection.QueryFirstOrDefaultAsync<ResultUrunlerDto>(query, parameters);
+
+                return values;
             }
         }
     }

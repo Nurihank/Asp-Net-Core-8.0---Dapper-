@@ -12,5 +12,7 @@ namespace WebApi.Repositories.UrunRepositories
         Task<bool> UpdateUrunler(UpdateUrunlerDto updateUrunlerDto);
         Task<ResultUrunlerDto> GetUrunByBarCodeAsync(string UrunBarcode);
         Task<List<ResultUrunlerDto>> GetUrunByNameAsync(string UrunAdi);
+        Task<ResultUrunlerDto> GetUrunByID(int id);
+
     }
 }
