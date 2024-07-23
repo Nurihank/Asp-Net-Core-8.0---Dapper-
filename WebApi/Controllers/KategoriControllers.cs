@@ -53,20 +53,6 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> KategoriGüncelleme([FromBody] UpdateKategoriDto updateKategoriDto)
-        {
-            var values = await _kategoriRepo.UpdateKategori(updateKategoriDto);
-            if (values)
-            {
-                return Ok("Başarıyla Güncellendi");
-            }
-            else
-            {
-                return Ok("Böyle bir Kategori bulunamadı");
-            }
-        }
-
         [HttpGet("{KategoriID}")]
         public async Task<IActionResult> ProductByIdCategory(int KategoriID)
         {

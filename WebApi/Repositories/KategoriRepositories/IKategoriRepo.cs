@@ -5,9 +5,8 @@ namespace WebApi.Repositories.KategoriRepositories
     public interface IKategoriRepo
     {
         Task<List<GetKategoriDto>> GetAllKategoriAsync();
-        Task<bool> CreateKategori(CreateKategoriDto createKategoriDto);
-        Task<bool> DeleteKategori(DeleteKategoriDto deleteKategoriDto);
-        Task<bool> UpdateKategori(UpdateKategoriDto updateKategoriDto);
         Task<List<ProductByCategoryIDDto>> GetAllProductByCategoryIDAsync(int KategoriID);
+        Task<bool> CreateKategori(CreateKategoriDto createKategoriDto);
+        Task<bool> DeleteKategori(DeleteKategoriDto deleteKategoriDto); 
     }
 }
