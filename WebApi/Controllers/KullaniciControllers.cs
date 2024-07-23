@@ -27,6 +27,7 @@ namespace WebApi.Controllers
             _configuration = configuration;
         }
 
+
         [HttpPost("/api/KullaniciControllers/KullaniciGiris")]
         public async Task<IActionResult> KullaniciGiris([FromBody] KullaniciGirisDto kullaniciGirisDto)
         {
@@ -73,6 +74,31 @@ namespace WebApi.Controllers
             }
         }
 
+        [Authorize]
+        [HttpPost("/api/KullaniciControllers/Token")]
+        public async Task<IActionResult> RefreshToken()
+        {
+            var claims = new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub , _configuration["Jwt:Subject"]),
+                    new Claim(JwtRegisteredClaimNames.Jti , Guid.NewGuid().ToString()),
+                };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var accessToken = new JwtSecurityToken(
+                    _configuration["Jwt:Issuer"],
+                    _configuration["Jwt:Audience"],
+                    claims,
+                    expires: DateTime.UtcNow.Add(TimeSpan.FromSeconds(60)),
+                    signingCredentials: signIn
+             );
+            string AccesTokenValue = new JwtSecurityTokenHandler().WriteToken(accessToken);
+
+            Console.WriteLine(AccesTokenValue);
+            return Ok(AccesTokenValue);
+        }
 
 
         [HttpPost("/api/KullaniciControllers/KullaniciKayit")]
