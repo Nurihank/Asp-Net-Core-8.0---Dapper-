@@ -143,3 +143,4 @@ C:\Users\Dell\Documents\GitHub\Asp-Net-Core-8.0---Dapper-\WebApi\bin\Debug\net8.
 C:\Users\Dell\Documents\GitHub\Asp-Net-Core-8.0---Dapper-\WebApi\bin\Debug\net8.0\MailKit.dll
 C:\Users\Dell\Documents\GitHub\Asp-Net-Core-8.0---Dapper-\WebApi\bin\Debug\net8.0\MimeKit.dll
 C:\Users\Dell\Documents\GitHub\Asp-Net-Core-8.0---Dapper-\WebApi\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\Dell\Documents\GitHub\Asp-Net-Core-8.0---Dapper-\WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

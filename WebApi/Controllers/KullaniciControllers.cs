@@ -1,5 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using Org.BouncyCastle.Pqc.Crypto.Crystals.Dilithium;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using WebApi.Dtos.kullaniciDtos;
 using WebApi.Repositories.KullaniciRepositories;
 
@@ -12,10 +18,13 @@ namespace WebApi.Controllers
     public class KullaniciControllers : ControllerBase
     {
         private readonly IKullaniciRepo _kullaniciRepo;
+        private readonly IConfiguration _configuration;
 
-        public KullaniciControllers(IKullaniciRepo kullaniciRepo)
+
+        public KullaniciControllers(IKullaniciRepo kullaniciRepo,IConfiguration configuration)
         {
             _kullaniciRepo = kullaniciRepo;
+            _configuration = configuration;
         }
 
         [HttpPost("/api/KullaniciControllers/KullaniciGiris")]
@@ -25,7 +34,38 @@ namespace WebApi.Controllers
 
             if (statusCode == 200)
             {
-                return Ok(new { userId, message,image });
+                var claims = new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub , _configuration["Jwt:Subject"]),
+                    new Claim(JwtRegisteredClaimNames.Jti , Guid.NewGuid().ToString()),
+                    new Claim("UserID",userId.ToString())
+                };
+
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+                var signIn = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
+
+                var accessToken = new JwtSecurityToken(
+                        _configuration["Jwt:Issuer"],
+                        _configuration["Jwt:Audience"],
+                        claims,
+                        expires:DateTime.UtcNow.Add(TimeSpan.FromSeconds(30)),
+                        signingCredentials:signIn
+                 );   
+               string AccesTokenValue = new JwtSecurityTokenHandler().WriteToken(accessToken);
+
+                var refreshToken = new JwtSecurityToken(
+                        _configuration["Jwt:Issuer"],
+                        _configuration["Jwt:Audience"],
+                        claims,
+                        expires: DateTime.UtcNow.Add(TimeSpan.FromHours(1)),
+                        signingCredentials: signIn
+                 );
+                string RefreshTokenValue = new JwtSecurityTokenHandler().WriteToken(refreshToken);
+
+                Console.WriteLine("AccesTokenValue = " + AccesTokenValue);
+                Console.WriteLine("RefreshTokenValue = " + RefreshTokenValue);
+
+                return Ok(new { userId, message,image, AccesTokenValue, RefreshTokenValue });
             }
             else
             {
@@ -33,8 +73,9 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpPost("/api/KullaniciControllers/KullaniciKayit")]
 
+
+        [HttpPost("/api/KullaniciControllers/KullaniciKayit")]
         public async Task<IActionResult> KullaniciKayit(KullaniciKayitDto kullaniciKayitDto)
         {
             var (userId, message, statusCode) = await _kullaniciRepo.KullaniciKayit(kullaniciKayitDto);
@@ -48,8 +89,8 @@ namespace WebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("/api/KullaniciControllers/KullaniciBilgileri/{id}")]
-
         public async Task<IActionResult> KullaniciBilgileri(int id)
         {
             var user =  await _kullaniciRepo.KullaniciBilgileri(id);
