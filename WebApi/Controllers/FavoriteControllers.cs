@@ -60,5 +60,13 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
+        [HttpDelete("/api/FavoriteControllers/FavoriSıfırla")]
+
+        public async Task<IActionResult> FavoriSıfırla(FavoriSıfırlaDto favoriSıfırlaDto)
+        {
+            var result = await _favoriRepo.FavoriSıfırla(favoriSıfırlaDto);
+            return Ok(result);
+        }
+
     }
 }

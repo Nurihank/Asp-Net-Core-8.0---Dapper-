@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\kullanicicontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\kullanicicontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\favoritecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\favoritecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\controllers\\kategoricontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\kategoricontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\favorirepositories\\favorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\favorirepositories\\favorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\kategorirepositories\\ikategorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\kategorirepositories\\ikategorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\dtos\\favoritedtos\\favoris\u0131f\u0131rladto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\favoritedtos\\favoris\u0131f\u0131rladto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|c:\\users\\dell\\documents\\github\\asp-net-core-8.0---dapper-\\webapi\\repositories\\favorirepositories\\ifavorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61BFCAF6-588F-4E7E-B25E-26FCDD1610AF}|WebApi\\WebApi.csproj|solutionrelative:webapi\\repositories\\favorirepositories\\ifavorirepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "KategoriControllers.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KategoriControllers.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\KategoriControllers.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KategoriControllers.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\KategoriControllers.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAuwDUAAAAJAAAA",
+              "DocumentIndex": 0,
+              "Title": "FavoriteControllers.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\FavoriteControllers.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\FavoriteControllers.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\FavoriteControllers.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\FavoriteControllers.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAgwEIAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T14:03:42.516Z",
+              "WhenOpened": "2024-07-24T08:24:32.55Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IKategoriRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KategoriRepositories\\IKategoriRepo.cs",
-              "RelativeDocumentMoniker": "WebApi\\Repositories\\KategoriRepositories\\IKategoriRepo.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\KategoriRepositories\\IKategoriRepo.cs",
-              "RelativeToolTip": "WebApi\\Repositories\\KategoriRepositories\\IKategoriRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABHAAAA",
+              "Title": "FavoriS\u0131f\u0131rlaDto.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\favoriteDtos\\FavoriS\u0131f\u0131rlaDto.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\favoriteDtos\\FavoriS\u0131f\u0131rlaDto.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Dtos\\favoriteDtos\\FavoriS\u0131f\u0131rlaDto.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\favoriteDtos\\FavoriS\u0131f\u0131rlaDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T13:55:27.115Z",
+              "WhenOpened": "2024-07-24T08:20:59.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FavoriRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FavoriRepositories\\FavoriRepo.cs",
+              "RelativeDocumentMoniker": "WebApi\\Repositories\\FavoriRepositories\\FavoriRepo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FavoriRepositories\\FavoriRepo.cs",
+              "RelativeToolTip": "WebApi\\Repositories\\FavoriRepositories\\FavoriRepo.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAkwE4AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T08:16:03.004Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Program.cs",
-              "RelativeToolTip": "WebApi\\Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACQAAAAGAAAA",
+              "Title": "IFavoriRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FavoriRepositories\\IFavoriRepo.cs",
+              "RelativeDocumentMoniker": "WebApi\\Repositories\\FavoriRepositories\\IFavoriRepo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Repositories\\FavoriRepositories\\IFavoriRepo.cs",
+              "RelativeToolTip": "WebApi\\Repositories\\FavoriRepositories\\IFavoriRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T08:07:01.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KullaniciControllers.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KullaniciControllers.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\KullaniciControllers.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\GitHub\\Asp-Net-Core-8.0---Dapper-\\WebApi\\Controllers\\KullaniciControllers.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\KullaniciControllers.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAcwIkAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T06:45:36.497Z",
+              "WhenOpened": "2024-07-24T08:15:06.535Z",
               "EditorCaption": ""
             }
           ]

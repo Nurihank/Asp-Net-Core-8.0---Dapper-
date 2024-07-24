@@ -67,6 +67,20 @@ namespace WebApi.Repositories.FavoriRepositories
             }
         }
 
+        public async Task<bool> FavoriSıfırla(FavoriSıfırlaDto favoriSıfırlaDto)
+        {
+            var query = "DELETE FROM FavoriUrunler WHERE KullaniciID=@KullaniciID";
+            var parameters = new DynamicParameters();
+            parameters.Add("@KullaniciID",favoriSıfırlaDto.KullaniciID);
+           
+            using(var connection = _context.CreateConnection())
+            {
+                var rowsAffected = await connection.ExecuteAsync(query, parameters);
+                Console.WriteLine(rowsAffected);
+                return rowsAffected > 0;
+            }
+        }
+
         public async Task<List<ResultUrunlerDto>> FavoriUrunleriGetir(int KullaniciID)
         {
             var query = "SELECT UrunID FROM FavoriUrunler WHERE KullaniciID = @KullaniciID";

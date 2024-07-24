@@ -9,5 +9,6 @@ namespace WebApi.Repositories.FavoriRepositories
         Task<bool> FavorilereEkle(FavoriEkleDto favoriEkleDto);
         Task<bool> FavoriSil(FavoriSilDto favoriSilDto);
         Task<List<ResultUrunlerDto>> FavoriUrunleriGetir(int KullaniciID);
+        Task<bool> FavoriSıfırla(FavoriSıfırlaDto favoriSıfırlaDto);
     }
 }
