@@ -14,5 +14,7 @@ namespace WebApi.Repositories.KullaniciRepositories
         Task<bool> SifreDegistir(SifreYenileDto sifreYenileDto);
         Task<string> ProfilResmiGetir(int KullaniciID);
         Task<bool> ProfilResmiKaydet(ProfilResmiKaydetDto profilResmiKaydetDto);
+        Task<bool> MailGonder(MailGonderDto mailGonder);
+
     }
 }

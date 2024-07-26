@@ -193,5 +193,12 @@ namespace WebApi.Controllers
             var result = await _kullaniciRepo.ProfilResmiKaydet(profilResmiKaydetDto);
             return Ok(result);
         }
+
+        [HttpPost("/api/KullaniciControllers/MailGonder")]
+        public async Task<IActionResult> MailGonder(MailGonderDto mailGonderDto)
+        {
+            var result = await _kullaniciRepo.MailGonder(mailGonderDto);
+            return Ok(result);
+        }
     }
 }

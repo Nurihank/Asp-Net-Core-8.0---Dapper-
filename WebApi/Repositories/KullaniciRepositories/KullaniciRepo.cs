@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 using Microsoft.AspNetCore.Http.Connections;
+using Org.BouncyCastle.Crypto.Macs;
 
 namespace WebApi.Repositories.KullaniciRepositories
 {
@@ -156,6 +157,61 @@ namespace WebApi.Repositories.KullaniciRepositories
                 else
                 {
                     return (0, "Böyle Bir Kullanici Adi Vardir", 0);
+                }
+            }
+        }
+
+        public async Task<bool> MailGonder(MailGonderDto mailGonder)
+        {
+            string query = "INSERT INTO Mail (KullaniciID,MailTuru,MailBasligi,Mail) VALUES(@id,@mailTuru,@mailBasligi,@mail)";
+            var parameters = new DynamicParameters();
+            parameters.Add("@id",mailGonder.KullaniciID);
+            parameters.Add("@mailTuru", mailGonder.MailTuru);
+            parameters.Add("@mailBasligi", mailGonder.MailBasligi);
+            parameters.Add("@mail", mailGonder.Mail);
+
+            string getMail = "SELECT Eposta FROM Kullanici WHERE KullaniciID = @id";
+            var mailParameters = new DynamicParameters();
+            mailParameters.Add("id",mailGonder.KullaniciID);
+
+            using(var connection = _context.CreateConnection())
+            {
+                var email = await connection.QuerySingleOrDefaultAsync<string>(getMail, mailParameters);
+                if (email != null)
+                {
+                    var subject = mailGonder.MailBasligi.ToString();
+                    var message = mailGonder.Mail.ToString();
+                    var client = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        EnableSsl = true,
+                        Credentials = new NetworkCredential(email, "avlf fwny yfbe efiz")
+                    };
+
+                    var mailMessage = new MailMessage
+                    {
+                        From = new MailAddress("kavalcinurihan01@gmail.com"),
+                        Subject = subject,
+                        Body = message,
+                        IsBodyHtml = true
+                    };
+
+                    mailMessage.To.Add("kavalcinurihan@gmail.com");
+
+                    try
+                    {
+                        await connection.ExecuteAsync(query, parameters);
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Mail gönderilirken hata: {ex.Message}");
+                        return false;
+                    }
+                    await connection.ExecuteAsync(query, parameters);
+                }
+                else
+                {
+                    throw new Exception("Email not found for the given KullaniciID");
                 }
             }
         }
