@@ -1,0 +1,458 @@
+[
+  {
+    "ContainingType": "WebApi.Controllers.FavoriteControllers",
+    "Method": "FavoriEkle",
+    "RelativePath": "api/FavoriteControllers/FavoriEkle",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "favoriEkleDto",
+        "Type": "WebApi.Dtos.favoriteDtos.FavoriEkleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.FavoriteControllers",
+    "Method": "FavoriMi",
+    "RelativePath": "api/FavoriteControllers/FavoriMi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UrunID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "KullaniciID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.FavoriteControllers",
+    "Method": "FavoriS\u0131f\u0131rla",
+    "RelativePath": "api/FavoriteControllers/FavoriS\u0131f\u0131rla",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "favoriS\u0131f\u0131rlaDto",
+        "Type": "WebApi.Dtos.favoriteDtos.FavoriS\u0131f\u0131rlaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.FavoriteControllers",
+    "Method": "FavoriSil",
+    "RelativePath": "api/FavoriteControllers/FavoriSil",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "favoriSilDto",
+        "Type": "WebApi.Dtos.favoriteDtos.FavoriSilDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.FavoriteControllers",
+    "Method": "FavoriUrunler",
+    "RelativePath": "api/FavoriteControllers/FavoriUrunler",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kullaniciId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.FiltreControllers",
+    "Method": "GetFiltreliUrunList",
+    "RelativePath": "api/FiltreControllers/{number}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "number",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.FiltreControllers",
+    "Method": "GetFiyatAraligiUrunList",
+    "RelativePath": "api/FiltreControllers/FiyatAraligi/{enD\u00FCs\u00FCk}/{enY\u00FCksek}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "enD\u00FCs\u00FCk",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "enY\u00FCksek",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KategoriControllers",
+    "Method": "KategoriListesi",
+    "RelativePath": "api/KategoriControllers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KategoriControllers",
+    "Method": "KategoriOlu\u015Fturma",
+    "RelativePath": "api/KategoriControllers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createKategoriDto",
+        "Type": "WebApi.Dtos.kategoriDtos.CreateKategoriDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KategoriControllers",
+    "Method": "KategoriSilme",
+    "RelativePath": "api/KategoriControllers",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deleteKategoriDto",
+        "Type": "WebApi.Dtos.kategoriDtos.DeleteKategoriDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KategoriControllers",
+    "Method": "ProductByIdCategory",
+    "RelativePath": "api/KategoriControllers/{KategoriID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "KategoriID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "Sifremiunuttum",
+    "RelativePath": "api/KullaniciControllers/KodAl",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sifremiUnuttumDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.SifremiUnuttumDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "KullaniciBilgileri",
+    "RelativePath": "api/KullaniciControllers/KullaniciBilgileri/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "KullaniciGiris",
+    "RelativePath": "api/KullaniciControllers/KullaniciGiris",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kullaniciGirisDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.KullaniciGirisDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "KullaniciGuncelle",
+    "RelativePath": "api/KullaniciControllers/KullaniciGuncelle",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kullaniciBilgileriGuncelleDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.KullaniciBilgileriGuncelleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "KullaniciKayit",
+    "RelativePath": "api/KullaniciControllers/KullaniciKayit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kullaniciKayitDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.KullaniciKayitDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "MailGonder",
+    "RelativePath": "api/KullaniciControllers/MailGonder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mailGonderDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.MailGonderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "ProfilResmiGetir",
+    "RelativePath": "api/KullaniciControllers/ProfilResmi/{kullaniciID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kullaniciID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "ProfilResmiKaydet",
+    "RelativePath": "api/KullaniciControllers/ProfilResmiKaydet",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profilResmiKaydetDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.ProfilResmiKaydetDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "SifreDegistir",
+    "RelativePath": "api/KullaniciControllers/SifreDegistir",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sifreYenileDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.SifreYenileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "SifreYenile",
+    "RelativePath": "api/KullaniciControllers/SifreYenile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sifreYenileDto",
+        "Type": "WebApi.Dtos.kullaniciDtos.SifreYenileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.KullaniciControllers",
+    "Method": "RefreshToken",
+    "RelativePath": "api/KullaniciControllers/Token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "UrunlerListesi",
+    "RelativePath": "api/UrunControllers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "UrunleriOlustur",
+    "RelativePath": "api/UrunControllers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createUrunlerDto",
+        "Type": "WebApi.Dtos.urun.CreateUrunlerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "UrunleriSil",
+    "RelativePath": "api/UrunControllers",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deleteUrunDto",
+        "Type": "WebApi.Dtos.urunDtos.DeleteUrunDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "UrunleriGuncelle",
+    "RelativePath": "api/UrunControllers",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateUrunlerDto",
+        "Type": "WebApi.Dtos.urunDtos.UpdateUrunlerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "GetUrunByNameAsync",
+    "RelativePath": "api/UrunControllers/{urunAdi}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "urunAdi",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "GetUrunByID",
+    "RelativePath": "api/UrunControllers/Urun/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UrunControllers",
+    "Method": "GetUrunByBarCodeAsync",
+    "RelativePath": "api/UrunControllers/UrunBarcode/{UrunBarcode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UrunBarcode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
